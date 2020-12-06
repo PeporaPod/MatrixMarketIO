@@ -1,4 +1,3 @@
-add_library(matrix_market_io matrix_market_io.c)
+add_library(matrix_market_io matrix_market_io.cpp)
 
-target_compile_features(matrix_market_io PUBLIC c_std_11)
-target_include_directories(matrix_market_io PUBLIC ../include)
+target_include_directories(matrix_market_io PUBLIC ${CMAKE_SOURCE_DIR}/include)

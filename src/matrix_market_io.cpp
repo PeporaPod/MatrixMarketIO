@@ -19,6 +19,15 @@ bool mmio::ReadHeaderObjectType(std::ifstream &file_stream) {
   return true;
 }
 
+bool mmio::ReadHeaderFormatType(std::ifstream &file_stream) {
+  std::string header_format_type_string;
+  std::getline(file_stream, header_format_type_string, ' ');
+  if (header_format_type_string != "coordinate") {
+    return false;
+  }
+  return true;
+}
+
 std::vector<std::string> mmio::ReadHeaderQualifiers(std::ifstream &file_stream) {
   std::string header_qualifiers_string;
   std::getline(file_stream, header_qualifiers_string);
